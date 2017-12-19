@@ -7,6 +7,7 @@ import android.widget.FrameLayout;
 import tcking.github.com.giraffeplayer2.GiraffePlayer;
 import tcking.github.com.giraffeplayer2.VideoView;
 import tcking.github.com.giraffeplayer2.PlayerListener;
+import tv.danmaku.ijk.media.player.IjkTimedText;
 
 import com.facebook.react.bridge.LifecycleEventListener;
 import com.facebook.react.uimanager.ThemedReactContext;
@@ -95,6 +96,11 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
     }
 
     @Override
+    public void onSeekComplete(GiraffePlayer giraffePlayer) {
+
+    }
+
+    @Override
     public boolean onError(GiraffePlayer giraffePlayer, int what, int extra) {
         return false;
     }
@@ -105,12 +111,37 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
     }
 
     @Override
+    public void onRelease(GiraffePlayer giraffePlayer) {
+
+    }
+
+    @Override
     public void onStart(GiraffePlayer giraffePlayer) {
 
     }
 
     @Override
+    public void onTargetStateChange(int oldState, int newState) {
+
+    }
+
+    @Override
     public void onCurrentStateChange(int oldState, int newState) {
+
+    }
+
+    @Override
+    public void onDisplayModelChange(int oldModel, int newModel) {
+
+    }
+
+    @Override
+    public void onPreparing(GiraffePlayer giraffePlayer) {
+
+    }
+
+    @Override
+    public void onTimedText(GiraffePlayer giraffePlayer, IjkTimedText text) {
 
     }
 }
