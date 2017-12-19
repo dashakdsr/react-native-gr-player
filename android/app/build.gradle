@@ -18,7 +18,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.github.tcking:giraffeplayer2:0.1.12'
     implementation "com.facebook.react:react-native:+"
 }
