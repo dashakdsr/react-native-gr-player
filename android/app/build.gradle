@@ -19,10 +19,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.github.tcking:ijkplayer-arm64:0.8.4' //support arm64
-    implementation 'com.github.tcking:ijkplayer-armv5:0.8.4' //support armv5
-    implementation 'com.github.tcking:ijkplayer-x86:0.8.4' //support x86
-    implementation 'com.github.tcking:ijkplayer-x86_64:0.8.4' //support x86_64
     implementation 'com.github.tcking:giraffeplayer2:0.1.12'
     implementation "com.facebook.react:react-native:+"
 }
