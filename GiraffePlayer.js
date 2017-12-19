@@ -149,4 +149,4 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   }
 })
-const GiraffePlayer = requireNativeComponent('GiraffePlayer', GiraffePlayer)
+const RCTGiraffePlayer = requireNativeComponent('RCTGiraffePlayer', GiraffePlayer)
