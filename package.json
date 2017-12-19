@@ -1,0 +1,19 @@
+{
+  "name": "giraffe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "GiraffePlayer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dashakdsr/react-native-gr-player.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dashakdsr/react-native-gr-player/issues"
+  },
+  "homepage": "https://github.com/dashakdsr/react-native-gr-player#readme"
+}
