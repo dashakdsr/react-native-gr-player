@@ -1,2 +1,2 @@
-rootProject.name = "giraffe"
+rootProject.name = "giraffeplayer2"
 include ':app', ':giraffeplayer2'
