@@ -78,7 +78,7 @@ export default class GiraffePlayer extends Component {
 
   _onPlaying (event) {
     if (this.props.onPlaying) {
-      this.props.onlaying(event.nativeEvent)
+      this.props.onPlaying(event.nativeEvent)
     }
   }
 
