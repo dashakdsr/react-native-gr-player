@@ -31,13 +31,12 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
         mThemedReactContext = context;
         mEventEmitter = mThemedReactContext.getJSModule(RCTEventEmitter.class);
         mThemedReactContext.addLifecycleEventListener(this);
-        playerListener = new DefaultPlayerListener();
-        inflate(getContext(), R.layout.player, this);
         init();
     }
 
     private void init() {
         inflate(getContext(), R.layout.player, this);
+        playerListener = new DefaultPlayerListener();
         videoView = (VideoView) findViewById(R.id.video_view);
         videoView.setPlayerListener(playerListener);
     }
