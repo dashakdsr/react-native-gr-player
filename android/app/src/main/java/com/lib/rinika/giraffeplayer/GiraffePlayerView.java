@@ -4,6 +4,7 @@ package com.lib.rinika.giraffeplayer;
 import android.net.Uri;
 import android.widget.FrameLayout;
 
+import tcking.github.com.giraffeplayer2.DefaultPlayerListener;
 import tcking.github.com.giraffeplayer2.GiraffePlayer;
 import tcking.github.com.giraffeplayer2.VideoView;
 import tcking.github.com.giraffeplayer2.PlayerListener;
@@ -20,6 +21,7 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
     private RCTEventEmitter mEventEmitter;
     private VideoView videoView;
     private boolean pausedState;
+    private PlayerListener playerListener;
 
     private String mSrcString;
 
@@ -29,8 +31,10 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
         mThemedReactContext = context;
         mEventEmitter = mThemedReactContext.getJSModule(RCTEventEmitter.class);
         mThemedReactContext.addLifecycleEventListener(this);
+        playerListener = new DefaultPlayerListener();
         inflate(getContext(), R.layout.player, this);
         videoView = (VideoView) findViewById(R.id.video_view);
+        videoView.setPlayerListener(playerListener);
     }
 
     private void setMedia(String filePath) {
@@ -73,6 +77,10 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
                 videoView.getPlayer().start();
             }
         }
+    }
+
+    public void onDropViewInstance() {
+        videoView.getPlayer().release();
     }
 
     @Override

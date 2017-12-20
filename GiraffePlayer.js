@@ -110,7 +110,7 @@ export default class GiraffePlayer extends Component {
     })
 
     return (
-      <GiraffePlayer ref={this._assignRoot} {...nativeProps} />
+      <RCTGiraffePlayer ref={this._assignRoot} {...nativeProps} />
     )
   }
 }

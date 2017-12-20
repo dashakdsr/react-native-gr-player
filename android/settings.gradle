@@ -1,1 +1,2 @@
+rootProject.name = "giraffe"
 include ':app'
