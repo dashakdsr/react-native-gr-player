@@ -89,6 +89,7 @@ export default class GiraffePlayer extends Component {
   }
 
   render () {
+    console.log('render')
     const {
       source
     } = this.props

@@ -30,7 +30,7 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
         mEventEmitter = mThemedReactContext.getJSModule(RCTEventEmitter.class);
         mThemedReactContext.addLifecycleEventListener(this);
         inflate(getContext(), R.layout.player, this);
-        videoView = findViewById(R.id.video_view);
+        videoView = (VideoView) findViewById(R.id.video_view);
     }
 
     private void setMedia(String filePath) {
