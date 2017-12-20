@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GiraffePlayer</string>
+    <string name="giraffe_player_url_empty">Please specify the address of the video playback</string>
+    <string name="small_problem">something error</string>
+    <string name="can_not_play">can not play this video</string>
+    <string name="not_support">player not support this device</string>
+    <string name="giraffe_player_track_type_unknown">unknown</string>
+    <string name="giraffe_player_track_type_audio">audio</string>
+    <string name="giraffe_player_track_type_video">video</string>
+    <string name="giraffe_player_live">live</string>
+    <string name="giraffe_player_track_type_subtitle">subtitle</string>
+    <string name="giraffe_player_track_type_timed_text">timed text</string>
+</resources>

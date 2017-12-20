@@ -19,6 +19,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.github.tcking:giraffeplayer2:0.1.12'
+    compile project(':giraffeplayer2')
     compile "com.facebook.react:react-native:+"
 }
