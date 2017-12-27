@@ -194,8 +194,8 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
                         break;
                     case MSG_SET_DISPLAY:
                         if (msg.obj == null) {
-//                            mediaPlayer.setDisplay(null);
-                            mediaPlayer.setSurface(new Surface((SurfaceTexture) msg.obj)); //used for own risk :D
+                            mediaPlayer.setDisplay(null);
+//                            mediaPlayer.setSurface(new Surface((SurfaceTexture) msg.obj)); //used for own risk :D
                         } else if (msg.obj instanceof SurfaceTexture) {
                             mediaPlayer.setSurface(new Surface((SurfaceTexture) msg.obj));
                         } else if (msg.obj instanceof SurfaceView) {
