@@ -46,6 +46,11 @@ public class DefaultPlayerListener implements PlayerListener {
     }
 
     @Override
+    public void onPlaying(GiraffePlayer giraffePlayer) {
+
+    }
+
+    @Override
     public void onRelease(GiraffePlayer giraffePlayer) {
 
     }
