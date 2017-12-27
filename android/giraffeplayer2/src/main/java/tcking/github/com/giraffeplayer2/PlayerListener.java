@@ -27,6 +27,8 @@ public interface PlayerListener {
 
     void onPause(GiraffePlayer giraffePlayer);
 
+    void onPlaying(GiraffePlayer giraffePlayer);
+
     void onRelease(GiraffePlayer giraffePlayer);
 
     void onStart(GiraffePlayer giraffePlayer);

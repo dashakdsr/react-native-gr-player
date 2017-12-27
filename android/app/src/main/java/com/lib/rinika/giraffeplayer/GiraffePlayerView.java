@@ -25,12 +25,52 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
     private ThemedReactContext mThemedReactContext;
     private RCTEventEmitter mEventEmitter;
     private VideoView videoView;
-    private boolean pausedState;
     private Runnable mProgressUpdateRunnable = null;
     private Handler mProgressUpdateHandler = new Handler();
+
     private boolean mPaused = true;
     private boolean mCompleted = false;
+    private String mSrcString;
+
+    public static final String EVENT_PROP_DURATION = "duration";
+    public static final String EVENT_PROP_CURRENT_TIME = "currentTime";
+    public static final String EVENT_PROP_END = "endReached";
+    public static final String EVENT_PROP_SEEK_TIME = "seekTime";
+
+    public static final String EVENT_PROP_ERROR = "error";
+    public static final String EVENT_PROP_WHAT = "what";
+    public static final String EVENT_PROP_EXTRA = "extra";
+
+    public enum Events {
+        EVENT_PROGRESS("onGRProgress"),
+        EVENT_ENDED("onGREnded"),
+        EVENT_STOPPED("onGRStopped"),
+        EVENT_PLAYING("onGRPlaying"),
+        EVENT_BUFFERING("onGRBuffering"),
+        EVENT_PAUSED("onGRPaused"),
+        EVENT_ERROR("onGRError"),
+        EVENT_SEEK("onGRVideoSeek");
+
+        private final String mName;
+
+        Events(final String name) {
+            mName = name;
+        }
+
+        @Override
+        public String toString() {
+            return mName;
+        }
+    }
+
+
     private PlayerListener playerListener = new DefaultPlayerListener(){//example of using playerListener
+
+        @Override
+        public void onPrepared(GiraffePlayer giraffePlayer) {
+            mPaused = true;
+            videoView.getPlayer().pause();
+        }
 
         @Override
         public boolean onInfo(GiraffePlayer giraffePlayer, int what, int extra) {
@@ -84,41 +124,6 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
 
     };
 
-    private String mSrcString;
-
-    public enum Events {
-        EVENT_PROGRESS("onGRProgress"),
-        EVENT_ENDED("onGREnded"),
-        EVENT_STOPPED("onGRStopped"),
-        EVENT_PLAYING("onGRPlaying"),
-        EVENT_BUFFERING("onGRBuffering"),
-        EVENT_PAUSED("onGRPaused"),
-        EVENT_ERROR("onGRError"),
-        EVENT_SEEK("onGRVideoSeek");
-
-        private final String mName;
-
-        Events(final String name) {
-            mName = name;
-        }
-
-        @Override
-        public String toString() {
-            return mName;
-        }
-    }
-
-    public static final String EVENT_PROP_DURATION = "duration";
-    public static final String EVENT_PROP_CURRENT_TIME = "currentTime";
-    public static final String EVENT_PROP_POSITION = "position";
-    public static final String EVENT_PROP_END = "endReached";
-    public static final String EVENT_PROP_SEEK_TIME = "seekTime";
-
-    public static final String EVENT_PROP_ERROR = "error";
-    public static final String EVENT_PROP_WHAT = "what";
-    public static final String EVENT_PROP_EXTRA = "extra";
-
-
     public GiraffePlayerView(ThemedReactContext context) {
         super(context.getCurrentActivity());
         mThemedReactContext = context;
@@ -137,21 +142,7 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
     private void setMedia(String filePath) {
         videoView.setVideoPath(filePath).setFingerprint(videoView.hashCode());
         videoView.getPlayer().initialize();
-        mProgressUpdateRunnable = new Runnable() {
-            @Override
-            public void run() {
-
-                if (!mCompleted && !mPaused) {
-                    WritableMap event = Arguments.createMap();
-                    event.putDouble(EVENT_PROP_CURRENT_TIME, videoView.getPlayer().getCurrentPosition() / 1000.0);
-                    event.putDouble(EVENT_PROP_DURATION,  videoView.getPlayer().getDuration() / 1000.0);
-                    mEventEmitter.receiveEvent(getId(), Events.EVENT_PROGRESS.toString(), event);
-
-                    // Check for update after an interval
-                    mProgressUpdateHandler.postDelayed(mProgressUpdateRunnable,250);
-                }
-            }
-        };
+        checkProgress();
     }
 
 
@@ -170,6 +161,24 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
 
     }
 
+    private void checkProgress () {
+        mProgressUpdateRunnable = new Runnable() {
+            @Override
+            public void run() {
+
+                if (!mCompleted && !mPaused) {
+                    WritableMap event = Arguments.createMap();
+                    event.putDouble(EVENT_PROP_CURRENT_TIME, videoView.getPlayer().getCurrentPosition() / 1000.0);
+                    event.putDouble(EVENT_PROP_DURATION,  videoView.getPlayer().getDuration() / 1000.0);
+                    mEventEmitter.receiveEvent(getId(), Events.EVENT_PROGRESS.toString(), event);
+
+                    // Check for update after an interval
+                    mProgressUpdateHandler.postDelayed(mProgressUpdateRunnable,250);
+                }
+            }
+        };
+    }
+
     public void setFilePath(String filePath) {
         this.mSrcString = filePath;
         setMedia(mSrcString);
@@ -186,22 +195,11 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
     }
 
     public void setPaused(boolean paused) {
-        pausedState = paused;
+        mPaused = paused;
         if (paused) {
-            if (videoView.getPlayer().isPlaying()) {
-                mPaused = true;
-                videoView.getPlayer().pause();
-            } else {
-                mPaused = true;
-                videoView.getPlayer().pause();
-            }
+            videoView.getPlayer().pause();
         } else {
-            if (!videoView.getPlayer().isPlaying()) {
-                start();
-            } else {
-                mPaused = true;
-                videoView.getPlayer().pause();
-            }
+            start();
         }
     }
 

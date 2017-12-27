@@ -265,7 +265,6 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
     public void initialize() {
         if (mediaPlayer == null) {
             init(true); //init for creating display
-//            mediaPlayer.release();
         }
     }
 

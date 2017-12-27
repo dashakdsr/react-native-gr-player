@@ -106,6 +106,13 @@ public class ProxyPlayerListener implements PlayerListener {
     }
 
     @Override
+    public void onPlaying(GiraffePlayer giraffePlayer) {
+        log("onPlaying");
+        listener().onPlaying(giraffePlayer);
+        outerListener().onPlaying(giraffePlayer);
+    }
+
+    @Override
     public void onRelease(GiraffePlayer giraffePlayer) {
         log("onRelease");
         listener().onRelease(giraffePlayer);
