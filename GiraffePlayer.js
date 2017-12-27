@@ -40,51 +40,51 @@ export default class GiraffePlayer extends Component {
   }
 
   _onBuffering (event) {
-    if (this.props.onBuffering) {
-      this.props.onBuffering(event.nativeEvent)
+    if (this.props.onGRBuffering) {
+      this.props.onGRBuffering(event.nativeEvent)
     }
   }
 
   _onError (event) {
-    if (this.props.onError) {
-      this.props.onError(event.nativeEvent)
+    if (this.props.onGRError) {
+      this.props.onGRError(event.nativeEvent)
     }
   }
 
   _onProgress (event) {
-    if (this.props.onProgress) {
-      this.props.onProgress(event.nativeEvent)
+    if (this.props.onGRProgress) {
+      this.props.onGRProgress(event.nativeEvent)
     }
   }
 
   _onEnded (event) {
-    if (this.props.onEnded) {
-      this.props.onEnded(event.nativeEvent)
+    if (this.props.onGREnded) {
+      this.props.onGREnded(event.nativeEvent)
     }
   }
 
   _onStopped (event) {
     this.setNativeProps({ paused: true })
-    if (this.props.onStopped) {
-      this.props.onStopped(event.nativeEvent)
+    if (this.props.onGRStopped) {
+      this.props.onGRStopped(event.nativeEvent)
     }
   }
 
   _onPaused (event) {
-    if (this.props.onPaused) {
-      this.props.onPaused(event.nativeEvent)
+    if (this.props.onGRPaused) {
+      this.props.onGRPaused(event.nativeEvent)
     }
   }
 
   _onPlaying (event) {
-    if (this.props.onPlaying) {
-      this.props.onPlaying(event.nativeEvent)
+    if (this.props.onGRPlaying) {
+      this.props.onGRPlaying(event.nativeEvent)
     }
   }
 
   _onVolumeChanged (event) {
-    if (this.props.onVolumeChanged) {
-      this.props.onVolumeChanged(event.nativeEvent)
+    if (this.props.onGRVolumeChanged) {
+      this.props.onGRVolumeChanged(event.nativeEvent)
     }
   }
 
@@ -99,14 +99,14 @@ export default class GiraffePlayer extends Component {
     Object.assign(nativeProps, {
       style: [styles.base, nativeProps.style],
       source: source,
-      onError: this._onError,
-      onProgress: this._onProgress,
-      onEnded: this._onEnded,
-      onPlaying: this._onPlaying,
-      onPaused: this._onPaused,
-      onStopped: this._onStopped,
-      onBuffering: this._onBuffering,
-      onVolumeChanged: this._onVolumeChanged
+      onGRError: this._onError,
+      onGRProgress: this._onProgress,
+      onGREnded: this._onEnded,
+      onGRPlaying: this._onPlaying,
+      onGRPaused: this._onPaused,
+      onGRStopped: this._onStopped,
+      onGRuffering: this._onBuffering,
+      onGRVolumeChanged: this._onVolumeChanged
     })
 
     return (
@@ -127,14 +127,14 @@ GiraffePlayer.propTypes = {
   volume: PropTypes.number,
   snapshotPath: PropTypes.string,
 
-  onPaused: PropTypes.func,
-  onStopped: PropTypes.func,
-  onBuffering: PropTypes.func,
-  onPlaying: PropTypes.func,
-  onEnded: PropTypes.func,
-  onError: PropTypes.func,
-  onProgress: PropTypes.func,
-  onVolumeChanged: PropTypes.func,
+  onGRPaused: PropTypes.func,
+  onGRStopped: PropTypes.func,
+  onGRBuffering: PropTypes.func,
+  onGRPlaying: PropTypes.func,
+  onGREnded: PropTypes.func,
+  onGRError: PropTypes.func,
+  onGRProgress: PropTypes.func,
+  onGRVolumeChanged: PropTypes.func,
 
   /* Required by react-native */
   scaleX: PropTypes.number,
