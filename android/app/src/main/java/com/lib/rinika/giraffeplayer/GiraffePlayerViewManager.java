@@ -1,10 +1,15 @@
 package com.lib.rinika.giraffeplayer;
 
 
+import android.support.annotation.Nullable;
+
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.common.MapBuilder;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.ViewGroupManager;
 import com.facebook.react.uimanager.annotations.ReactProp;
+
+import java.util.Map;
 
 public class GiraffePlayerViewManager extends ViewGroupManager<GiraffePlayerView> {
 
@@ -14,7 +19,6 @@ public class GiraffePlayerViewManager extends ViewGroupManager<GiraffePlayerView
     public static final String PROP_SEEK = "seek";
     public static final String PROP_PAUSED = "paused";
     public static final String PROP_VOLUME = "volume";
-    public static final String PROP_RESIZE = "resize";
 
     @Override
     public String getName() {
@@ -26,6 +30,16 @@ public class GiraffePlayerViewManager extends ViewGroupManager<GiraffePlayerView
         return new GiraffePlayerView(reactContext);
     }
 
+    @Nullable
+    @Override
+    public Map getExportedCustomDirectEventTypeConstants() {
+        MapBuilder.Builder builder = MapBuilder.builder();
+        for (GiraffePlayerView.Events event : GiraffePlayerView.Events.values()) {
+            builder.put(event.toString(), MapBuilder.of("registrationName", event.toString()));
+        }
+        return builder.build();
+    }
+
     @ReactProp(name = PROP_SOURCE)
     public void setPath(final GiraffePlayerView playerView, ReadableMap map) {
         String path = map.getString("uri");
@@ -35,6 +49,11 @@ public class GiraffePlayerViewManager extends ViewGroupManager<GiraffePlayerView
     @ReactProp(name = PROP_VOLUME)
     public void setVolume(final GiraffePlayerView playerView, float volume) {
         playerView.setVolume(300 * volume);
+    }
+
+    @ReactProp(name = PROP_SEEK)
+    public void setSeek(final GiraffePlayerView playerView, float seek) {
+        playerView.seek((int) seek);
     }
 
     @ReactProp(name = PROP_PAUSED)

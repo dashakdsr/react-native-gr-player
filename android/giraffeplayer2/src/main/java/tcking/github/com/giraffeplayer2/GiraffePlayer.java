@@ -119,7 +119,7 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
     }
 
 
-    private GiraffePlayer(Context context, VideoInfo videoInfo) {
+    public GiraffePlayer(Context context, VideoInfo videoInfo) {
         this.context = context.getApplicationContext();
         this.videoInfo = videoInfo;
         log("new GiraffePlayer");
@@ -127,6 +127,7 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
         boxContainerRef = new WeakReference<>(videoView!=null?videoView.getContainer():null);
         this.proxyListener = new ProxyPlayerListener(videoInfo);
         internalPlaybackThread = new HandlerThread("GiraffePlayerInternal:Handler", Process.THREAD_PRIORITY_AUDIO);
+        Log.v("isPlay", String.valueOf(isPlaying()));
         internalPlaybackThread.start();
         handler = new Handler(internalPlaybackThread.getLooper(), new Handler.Callback() {
             @Override
@@ -193,7 +194,8 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
                         break;
                     case MSG_SET_DISPLAY:
                         if (msg.obj == null) {
-                            mediaPlayer.setDisplay(null);
+//                            mediaPlayer.setDisplay(null);
+                            mediaPlayer.setSurface(new Surface((SurfaceTexture) msg.obj)); //used for own risk :D
                         } else if (msg.obj instanceof SurfaceTexture) {
                             mediaPlayer.setSurface(new Surface((SurfaceTexture) msg.obj));
                         } else if (msg.obj instanceof SurfaceView) {
@@ -257,6 +259,13 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
 
                 }
             });
+        }
+    }
+
+    public void initialize() {
+        if (mediaPlayer == null) {
+            init(true); //init for creating display
+//            mediaPlayer.release();
         }
     }
 

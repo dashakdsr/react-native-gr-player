@@ -76,7 +76,7 @@ public class VideoView extends FrameLayout{
     private void init(Context context) {
         container = new FrameLayout(context);
         addView(container,new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        initMediaController();
+//        initMediaController(); Giraffe 2 has videoView.getMediaController() function, so you can to get mediaController if you want
         setBackgroundColor(videoInfo.getBgColor());
     }
 
