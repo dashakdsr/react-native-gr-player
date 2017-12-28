@@ -1,6 +1,9 @@
 package com.lib.rinika.giraffeplayer;
 
 
+import android.content.Context;
+import android.graphics.Color;
+import android.media.AudioManager;
 import android.os.Handler;
 import android.widget.FrameLayout;
 
@@ -26,15 +29,17 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
     private RCTEventEmitter mEventEmitter;
     private VideoView videoView;
     private Runnable mProgressUpdateRunnable = null;
+    protected AudioManager audioManager;
     private Handler mProgressUpdateHandler = new Handler();
 
     private boolean mPaused = true;
     private boolean mCompleted = false;
     private String mSrcString;
+    protected int maxVolume;
+    protected int volume = -1;
 
     public static final String EVENT_PROP_DURATION = "duration";
     public static final String EVENT_PROP_CURRENT_TIME = "currentTime";
-    public static final String EVENT_PROP_POSITION = "position";
     public static final String EVENT_PROP_END = "endReached";
     public static final String EVENT_PROP_SEEK_TIME = "seekTime";
 
@@ -138,6 +143,9 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
         videoView = (VideoView) findViewById(R.id.video_view);
         PlayerManager.getInstance().getDefaultVideoInfo().addOption(Option.create(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "multiple_requests", 1L));
         videoView.setPlayerListener(playerListener);
+        audioManager = (AudioManager) getContext().getSystemService(Context.AUDIO_SERVICE);
+        maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+        videoView.getVideoInfo().setBgColor(Color.BLACK);
     }
 
     private void setMedia(String filePath) {
@@ -192,8 +200,14 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
         mProgressUpdateHandler.post(mProgressUpdateRunnable);
     }
 
-    public void setVolume(float volume) {
-        videoView.getPlayer().setVolume(volume, volume);
+    public void setVolume(float percent) {
+        int index = (int) (percent * maxVolume);
+        if (index > maxVolume)
+            index = maxVolume;
+        else if (percent == 0.0)
+            index = 0;
+
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, index, 0);
     }
 
     public void setPaused(boolean paused) {
