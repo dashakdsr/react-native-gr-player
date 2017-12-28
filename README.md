@@ -15,6 +15,7 @@ Run `npm i -S https://github.com/dashakdsr/react-native-gr-player.git`
 - in settings.gradle add:
 
   `include ':giraffeplayer2'`
+  ```
   `project(':giraffeplayer2').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-gr-player/android/giraffeplayer2')`
 
 
