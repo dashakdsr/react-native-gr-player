@@ -53,7 +53,7 @@ public class GiraffePlayerViewManager extends ViewGroupManager<GiraffePlayerView
 
     @ReactProp(name = PROP_SEEK)
     public void setSeek(final GiraffePlayerView playerView, float seek) {
-        playerView.seek((int) seek);
+        playerView.seek(seek);
     }
 
     @ReactProp(name = PROP_PAUSED)
