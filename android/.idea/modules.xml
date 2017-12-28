@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/giraffe.iml" filepath="$PROJECT_DIR$/giraffe.iml" />
       <module fileurl="file://$PROJECT_DIR$/giraffeplayer2/giraffeplayer2.iml" filepath="$PROJECT_DIR$/giraffeplayer2/giraffeplayer2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/react-native-gr-player.iml" filepath="$PROJECT_DIR$/react-native-gr-player.iml" />
     </modules>
   </component>
 </project>

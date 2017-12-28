@@ -1,2 +1,2 @@
-rootProject.name = "giraffe"
+rootProject.name = "react-native-gr-player"
 include ':app', ':giraffeplayer2'
