@@ -48,7 +48,7 @@ public class GiraffePlayerViewManager extends ViewGroupManager<GiraffePlayerView
 
     @ReactProp(name = PROP_VOLUME)
     public void setVolume(final GiraffePlayerView playerView, float volume) {
-        playerView.setVolume(300 * volume);
+        playerView.setVolume(volume);
     }
 
     @ReactProp(name = PROP_SEEK)
