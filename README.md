@@ -27,11 +27,11 @@ Run `npm i -S https://github.com/dashakdsr/react-native-gr-player.git`
     volume={this.state.volume}
     style={styles.giraffePlayer}
     source={{uri: this.props.uri}}
-    onVLCProgress={this.onProgress.bind(this)}
-    onVLCEnded={this.onEnded.bind(this)}
-    onVLCPlaying={this.onPlaying.bind(this)}
-    onVLCBuffering={this.onBuffering.bind(this)}
-    onVLCPaused={this.onPaused.bind(this)}
+    onGRProgress={this.onProgress.bind(this)}
+    onGREnded={this.onEnded.bind(this)}
+    onGRPlaying={this.onPlaying.bind(this)}
+    onGRBuffering={this.onBuffering.bind(this)}
+    onGRPaused={this.onPaused.bind(this)}
  />
 
 ```
@@ -41,5 +41,5 @@ Run `npm i -S https://github.com/dashakdsr/react-native-gr-player.git`
 `seek(msc)`
 
 ```
-this.refs['giraffePlayer'].seek(0.333);
+this.refs['giraffePlayer'].seek(value);
 ```
