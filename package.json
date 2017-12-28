@@ -1,6 +1,6 @@
 {
   "name": "react-native-gr-player",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "GiraffePlayer.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/dashakdsr/react-native-gr-player.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dashakdsr/react-native-gr-player/issues"
   },
