@@ -2,7 +2,7 @@
   "name": "react-native-gr-player",
   "version": "0.1.0",
   "description": "",
-  "main": "GiraffePlayer.js",
+  "main": "SGPlayer.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/dashakdsr/react-native-gr-player/issues"
   },
-  "homepage": "https://github.com/dashakdsr/react-native-gr-player#readme"
+  "homepage": "https://github.com/dashakdsr/react-native-gr-player#readme",
+  "dependencies": {}
 }
