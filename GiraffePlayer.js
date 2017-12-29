@@ -109,12 +109,12 @@ export default class SGPlayer extends Component {
     })
 
     return (
-      <RCTGiraffePlayer ref={this._assignRoot} {...nativeProps} />
+      <RCTSGlayer ref={this._assignRoot} {...nativeProps} />
     )
   }
 }
 
-GiraffePlayer.propTypes = {
+SGPlayer.propTypes = {
   /* Wrapper component */
   source: PropTypes.object,
 
