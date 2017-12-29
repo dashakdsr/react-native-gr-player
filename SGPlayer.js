@@ -109,7 +109,7 @@ export default class SGPlayer extends Component {
     })
 
     return (
-      <RCTSGlayer ref={this._assignRoot} {...nativeProps} />
+      <RCTSGPlayer ref={this._assignRoot} {...nativeProps} />
     )
   }
 }
@@ -149,4 +149,4 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   }
 })
-const RCTSGlayer = requireNativeComponent('RCTSGlayer', SGPlayer)
+const RCTSGPlayer = requireNativeComponent('RCTSGPlayer', SGPlayer)
