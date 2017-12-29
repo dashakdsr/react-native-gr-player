@@ -100,8 +100,8 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
         @Override
         public void onSeekComplete(GiraffePlayer giraffePlayer) {
             WritableMap seek = Arguments.createMap();
-            seek.putDouble(EVENT_PROP_CURRENT_TIME, videoView.getPlayer().getCurrentPosition());
-            seek.putDouble(EVENT_PROP_DURATION, videoView.getPlayer().getDuration());
+            seek.putDouble(EVENT_PROP_CURRENT_TIME, videoView.getPlayer().getCurrentPosition() / 1000);
+            seek.putDouble(EVENT_PROP_DURATION, videoView.getPlayer().getDuration() / 1000);
             mEventEmitter.receiveEvent(getId(), Events.EVENT_PROGRESS.toString(), seek);
         }
 
@@ -228,7 +228,7 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
 
     public void seek(float seek) {
         WritableMap event = Arguments.createMap();
-        event.putDouble(EVENT_PROP_CURRENT_TIME, videoView.getPlayer().getCurrentPosition());
+        event.putDouble(EVENT_PROP_CURRENT_TIME, videoView.getPlayer().getCurrentPosition() / 1000);
         event.putDouble(EVENT_PROP_SEEK_TIME, seek);
         mEventEmitter.receiveEvent(getId(), Events.EVENT_SEEK.toString(), event);
         int newPosition = (int) ((videoView.getPlayer().getDuration() * seek * 1.0));
