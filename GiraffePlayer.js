@@ -12,7 +12,7 @@ const {
   View
 } = ReactNative
 
-export default class GiraffePlayer extends Component {
+export default class SGPlayer extends Component {
   constructor (props, context) {
     super(props, context)
     this.seek = this.seek.bind(this)
@@ -40,51 +40,51 @@ export default class GiraffePlayer extends Component {
   }
 
   _onBuffering (event) {
-    if (this.props.onGRBuffering) {
-      this.props.onGRBuffering(event.nativeEvent)
+    if (this.props.onSGBuffering) {
+      this.props.onSGBuffering(event.nativeEvent)
     }
   }
 
   _onError (event) {
-    if (this.props.onGRError) {
-      this.props.onGRError(event.nativeEvent)
+    if (this.props.onSGError) {
+      this.props.onSGError(event.nativeEvent)
     }
   }
 
   _onProgress (event) {
-    if (this.props.onGRProgress) {
-      this.props.onGRProgress(event.nativeEvent)
+    if (this.props.onSGProgress) {
+      this.props.onSGProgress(event.nativeEvent)
     }
   }
 
   _onEnded (event) {
-    if (this.props.onGREnded) {
-      this.props.onGREnded(event.nativeEvent)
+    if (this.props.onSGEnded) {
+      this.props.onSGEnded(event.nativeEvent)
     }
   }
 
   _onStopped (event) {
     this.setNativeProps({ paused: true })
-    if (this.props.onGRStopped) {
-      this.props.onGRStopped(event.nativeEvent)
+    if (this.props.onSGStopped) {
+      this.props.onSGStopped(event.nativeEvent)
     }
   }
 
   _onPaused (event) {
-    if (this.props.onGRPaused) {
-      this.props.onGRPaused(event.nativeEvent)
+    if (this.props.onSGPaused) {
+      this.props.onSGPaused(event.nativeEvent)
     }
   }
 
   _onPlaying (event) {
-    if (this.props.onGRPlaying) {
-      this.props.onGRPlaying(event.nativeEvent)
+    if (this.props.onSGPlaying) {
+      this.props.onSGPlaying(event.nativeEvent)
     }
   }
 
   _onVolumeChanged (event) {
-    if (this.props.onGRVolumeChanged) {
-      this.props.onGRVolumeChanged(event.nativeEvent)
+    if (this.props.onSGVolumeChanged) {
+      this.props.onSGVolumeChanged(event.nativeEvent)
     }
   }
 
@@ -98,14 +98,14 @@ export default class GiraffePlayer extends Component {
     Object.assign(nativeProps, {
       style: [styles.base, nativeProps.style],
       source: source,
-      onGRError: this._onError,
-      onGRProgress: this._onProgress,
-      onGREnded: this._onEnded,
-      onGRPlaying: this._onPlaying,
-      onGRPaused: this._onPaused,
-      onGRStopped: this._onStopped,
-      onGRuffering: this._onBuffering,
-      onGRVolumeChanged: this._onVolumeChanged
+      onSGError: this._onError,
+      onSGProgress: this._onProgress,
+      onSGEnded: this._onEnded,
+      onSGPlaying: this._onPlaying,
+      onSGPaused: this._onPaused,
+      onSGStopped: this._onStopped,
+      onSGBuffering: this._onBuffering,
+      onSGVolumeChanged: this._onVolumeChanged
     })
 
     return (
@@ -126,14 +126,14 @@ GiraffePlayer.propTypes = {
   volume: PropTypes.number,
   snapshotPath: PropTypes.string,
 
-  onGRPaused: PropTypes.func,
-  onGRStopped: PropTypes.func,
-  onGRBuffering: PropTypes.func,
-  onGRPlaying: PropTypes.func,
-  onGREnded: PropTypes.func,
-  onGRError: PropTypes.func,
-  onGRProgress: PropTypes.func,
-  onGRVolumeChanged: PropTypes.func,
+  onSGPaused: PropTypes.func,
+  onSGStopped: PropTypes.func,
+  onSGBuffering: PropTypes.func,
+  onSGPlaying: PropTypes.func,
+  onSGEnded: PropTypes.func,
+  onSGError: PropTypes.func,
+  onSGProgress: PropTypes.func,
+  onSGVolumeChanged: PropTypes.func,
 
   /* Required by react-native */
   scaleX: PropTypes.number,
@@ -149,4 +149,4 @@ const styles = StyleSheet.create({
     overflow: 'hidden'
   }
 })
-const RCTGiraffePlayer = requireNativeComponent('RCTGiraffePlayer', GiraffePlayer)
+const RCTSGlayer = requireNativeComponent('RCTSGlayer', SGPlayer)

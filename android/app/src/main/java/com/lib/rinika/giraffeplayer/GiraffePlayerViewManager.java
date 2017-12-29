@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class GiraffePlayerViewManager extends ViewGroupManager<GiraffePlayerView> {
 
-    public static final String REACT_CLASS = "RCTGiraffePlayer";
+    public static final String REACT_CLASS = "RCTSGlayer";
 
     public static final String PROP_SOURCE = "source";
     public static final String PROP_SEEK = "seek";

@@ -48,14 +48,14 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
     public static final String EVENT_PROP_EXTRA = "extra";
 
     public enum Events {
-        EVENT_PROGRESS("onGRProgress"),
-        EVENT_ENDED("onGREnded"),
-        EVENT_STOPPED("onGRStopped"),
-        EVENT_PLAYING("onGRPlaying"),
-        EVENT_BUFFERING("onGRBuffering"),
-        EVENT_PAUSED("onGRPaused"),
-        EVENT_ERROR("onGRError"),
-        EVENT_SEEK("onGRVideoSeek");
+        EVENT_PROGRESS("onSGProgress"),
+        EVENT_ENDED("onSGEnded"),
+        EVENT_STOPPED("onSGStopped"),
+        EVENT_PLAYING("onSGPlaying"),
+        EVENT_BUFFERING("onSGBuffering"),
+        EVENT_PAUSED("onSGPaused"),
+        EVENT_ERROR("onSGError"),
+        EVENT_SEEK("onSGVideoSeek");
 
         private final String mName;
 
@@ -157,18 +157,25 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
 
     @Override
     public void onHostResume() {
-
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                // Restore original state
+                setPaused(mPaused);
+            }
+        });
     }
 
     @Override
     public void onHostPause() {
-
+        setPaused(true);
     }
 
     @Override
     public void onHostDestroy() {
 
     }
+
 
     private void checkProgress () {
         mProgressUpdateRunnable = new Runnable() {
