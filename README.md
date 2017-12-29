@@ -39,12 +39,11 @@ Run `npm i -S https://github.com/dashakdsr/react-native-gr-player.git`
 
 - Add to `./node_modules/react-native-gr-player/ios` folder - Frameworks
 
-Link to [Frameworks](https://drive.google.com/open?id=1ExSPtcKUJMWm0qxGbvZ2W2Pe49wZe-a)
+Link to [Frameworks](https://drive.google.com/open?id=1ExSPtcKUJMWm0qxGbvZ2W2Pe49wZe-a_)
 
 - Add to `Link binary with libraries`:
 
-![Image of libraries]
-(http://prntscr.com/httw95)
+![Image of libraries][http://prntscr.com/httw95]
 
 - Add to `Build Settings/Framework Search Paths` path to your Frameworks.
 
