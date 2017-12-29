@@ -201,8 +201,8 @@ static NSString *const playbackRate = @"rate";
     float volume = [[[notification userInfo] objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"] floatValue];
     if (_volume != volume) {
         _volume = volume;
-        if (self.onVolumeChanged) {
-            self.onVolumeChanged(@{@"volume": [NSNumber numberWithFloat: volume]});
+        if (self.onSGVolumeChanged) {
+            self.onSGVolumeChanged(@{@"volume": [NSNumber numberWithFloat: volume]});
         }
     }
 }
@@ -215,8 +215,8 @@ static NSString *const playbackRate = @"rate";
     CGFloat position  = progress.current / progress.total;
 
     if( currentTime >= 0 && currentTime < duration) {
-        if (self.onProgress) {
-            self.onProgress(@{ @"target": self.reactTag,
+        if (self.onSGProgress) {
+            self.onSGProgress(@{ @"target": self.reactTag,
                                @"currentTime": [NSNumber numberWithInt:currentTime],
                                @"remainingTime": [NSNumber numberWithInt:remainingTime],
                                @"duration":[NSNumber numberWithInt:duration],
