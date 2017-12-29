@@ -21,7 +21,6 @@ export default class SGPlayer extends Component {
     this._onProgress = this._onProgress.bind(this)
     this._onEnded = this._onEnded.bind(this)
     this._onPlaying = this._onPlaying.bind(this)
-    this._onStopped = this._onStopped.bind(this)
     this._onPaused = this._onPaused.bind(this)
     this._onBuffering = this._onBuffering.bind(this)
     this._onVolumeChanged = this._onVolumeChanged.bind(this)
@@ -63,13 +62,6 @@ export default class SGPlayer extends Component {
     }
   }
 
-  _onStopped (event) {
-    this.setNativeProps({ paused: true })
-    if (this.props.onSGStopped) {
-      this.props.onSGStopped(event.nativeEvent)
-    }
-  }
-
   _onPaused (event) {
     if (this.props.onSGPaused) {
       this.props.onSGPaused(event.nativeEvent)
@@ -103,7 +95,6 @@ export default class SGPlayer extends Component {
       onSGEnded: this._onEnded,
       onSGPlaying: this._onPlaying,
       onSGPaused: this._onPaused,
-      onSGStopped: this._onStopped,
       onSGBuffering: this._onBuffering,
       onSGVolumeChanged: this._onVolumeChanged
     })
@@ -127,7 +118,6 @@ SGPlayer.propTypes = {
   snapshotPath: PropTypes.string,
 
   onSGPaused: PropTypes.func,
-  onSGStopped: PropTypes.func,
   onSGBuffering: PropTypes.func,
   onSGPlaying: PropTypes.func,
   onSGEnded: PropTypes.func,

@@ -10,7 +10,6 @@
 @property (nonatomic) float volume;
 
 @property (nonatomic, copy) RCTDirectEventBlock onSGPaused;
-@property (nonatomic, copy) RCTDirectEventBlock onSGStopped;
 @property (nonatomic, copy) RCTDirectEventBlock onSGBuffering;
 @property (nonatomic, copy) RCTDirectEventBlock onSGPlaying;
 @property (nonatomic, copy) RCTDirectEventBlock onSGEnded;
