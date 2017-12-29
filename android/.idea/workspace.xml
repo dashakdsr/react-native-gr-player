@@ -35,13 +35,13 @@
       <file leaf-file-name="GiraffePlayerView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lib/rinika/giraffeplayer/GiraffePlayerView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1785">
-              <caret line="57" column="36" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+            <state relative-caret-position="205">
+              <caret line="184" column="46" lean-forward="true" selection-start-line="184" selection-start-column="46" selection-end-line="184" selection-end-column="46" />
               <folding>
                 <element signature="e#5996#6168#0" expanded="true" />
                 <element signature="e#6167#6168#0" expanded="true" />
-                <element signature="e#6383#7050#0" expanded="true" />
-                <element signature="e#7049#7050#0" expanded="true" />
+                <element signature="e#6383#7064#0" expanded="true" />
+                <element signature="e#7063#7064#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2658,8 +2658,8 @@
         <option value="$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/PlayerListener.java" />
         <option value="$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/DefaultPlayerListener.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/lib/rinika/giraffeplayer/GiraffePlayerView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lib/rinika/giraffeplayer/GiraffePlayerViewManager.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/lib/rinika/giraffeplayer/GiraffePlayerView.java" />
       </list>
     </option>
   </component>
@@ -2870,7 +2870,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514539242586" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514540038443" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3031,7 +3031,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514539242588" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1514540038444" />
       </method>
     </configuration>
     <list size="1">
@@ -3065,6 +3065,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1802" height="941" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3123,8 +3124,8 @@
           <folding>
             <element signature="e#5996#6168#0" expanded="true" />
             <element signature="e#6167#6168#0" expanded="true" />
-            <element signature="e#6383#7050#0" expanded="true" />
-            <element signature="e#7049#7050#0" expanded="true" />
+            <element signature="e#6383#7064#0" expanded="true" />
+            <element signature="e#7063#7064#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3180,8 +3181,8 @@
           <folding>
             <element signature="e#5996#6168#0" expanded="true" />
             <element signature="e#6167#6168#0" expanded="true" />
-            <element signature="e#6383#7050#0" expanded="true" />
-            <element signature="e#7049#7050#0" expanded="true" />
+            <element signature="e#6383#7064#0" expanded="true" />
+            <element signature="e#7063#7064#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3237,8 +3238,8 @@
           <folding>
             <element signature="e#5996#6168#0" expanded="true" />
             <element signature="e#6167#6168#0" expanded="true" />
-            <element signature="e#6383#7050#0" expanded="true" />
-            <element signature="e#7049#7050#0" expanded="true" />
+            <element signature="e#6383#7064#0" expanded="true" />
+            <element signature="e#7063#7064#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3294,8 +3295,8 @@
           <folding>
             <element signature="e#5996#6168#0" expanded="true" />
             <element signature="e#6167#6168#0" expanded="true" />
-            <element signature="e#6383#7050#0" expanded="true" />
-            <element signature="e#7049#7050#0" expanded="true" />
+            <element signature="e#6383#7064#0" expanded="true" />
+            <element signature="e#7063#7064#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3335,8 +3336,8 @@
           <folding>
             <element signature="e#5996#6168#0" expanded="true" />
             <element signature="e#6167#6168#0" expanded="true" />
-            <element signature="e#6383#7050#0" expanded="true" />
-            <element signature="e#7049#7050#0" expanded="true" />
+            <element signature="e#6383#7064#0" expanded="true" />
+            <element signature="e#7063#7064#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -3535,13 +3536,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lib/rinika/giraffeplayer/GiraffePlayerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1785">
-          <caret line="57" column="36" lean-forward="false" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+        <state relative-caret-position="205">
+          <caret line="184" column="46" lean-forward="true" selection-start-line="184" selection-start-column="46" selection-end-line="184" selection-end-column="46" />
           <folding>
             <element signature="e#5996#6168#0" expanded="true" />
             <element signature="e#6167#6168#0" expanded="true" />
-            <element signature="e#6383#7050#0" expanded="true" />
-            <element signature="e#7049#7050#0" expanded="true" />
+            <element signature="e#6383#7064#0" expanded="true" />
+            <element signature="e#7063#7064#0" expanded="true" />
           </folding>
         </state>
       </provider>

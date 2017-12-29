@@ -184,8 +184,8 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
 
                 if (!mCompleted && !mPaused) {
                     WritableMap event = Arguments.createMap();
-                    event.putDouble(EVENT_PROP_CURRENT_TIME, videoView.getPlayer().getCurrentPosition());
-                    event.putDouble(EVENT_PROP_DURATION,  videoView.getPlayer().getDuration());
+                    event.putDouble(EVENT_PROP_CURRENT_TIME, videoView.getPlayer().getCurrentPosition() / 1000);
+                    event.putDouble(EVENT_PROP_DURATION,  videoView.getPlayer().getDuration() / 1000);
                     mEventEmitter.receiveEvent(getId(), Events.EVENT_PROGRESS.toString(), event);
 
                     // Check for update after an interval
