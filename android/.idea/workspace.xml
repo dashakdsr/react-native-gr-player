@@ -32,21 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GiraffePlayerView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GiraffePlayerView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lib/rinika/giraffeplayer/GiraffePlayerView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-532">
-              <caret line="42" column="60" lean-forward="false" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProxyPlayerListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/ProxyPlayerListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1590">
-              <caret line="112" column="5" lean-forward="false" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+            <state relative-caret-position="-318">
+              <caret line="114" column="50" lean-forward="true" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -55,8 +45,18 @@
       <file leaf-file-name="GiraffePlayer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/GiraffePlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="886">
-              <caret line="685" column="12" lean-forward="true" selection-start-line="685" selection-start-column="12" selection-end-line="685" selection-end-column="12" />
+            <state relative-caret-position="301">
+              <caret line="641" column="0" lean-forward="true" selection-start-line="641" selection-start-column="0" selection-end-line="641" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/PlayerManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="772">
+              <caret line="221" column="0" lean-forward="true" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -2633,7 +2633,6 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/giraffeplayer2/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/VideoView.java" />
-        <option value="$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/PlayerManager.java" />
         <option value="$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/ProxyPlayerListener.java" />
         <option value="$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/PlayerListener.java" />
         <option value="$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/DefaultPlayerListener.java" />
@@ -2641,6 +2640,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/lib/rinika/giraffeplayer/GiraffePlayerViewManager.java" />
         <option value="$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/GiraffePlayer.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/lib/rinika/giraffeplayer/GiraffePlayerView.java" />
+        <option value="$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/PlayerManager.java" />
       </list>
     </option>
   </component>
@@ -2922,7 +2922,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515407512050" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515407710242" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3083,7 +3083,7 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515407512051" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1515407710243" />
       </method>
     </configuration>
     <list size="1">
@@ -3411,24 +3411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/PlayerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3045">
-          <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#724#725#0" expanded="false" />
-            <element signature="e#763#764#0" expanded="false" />
-            <element signature="e#1241#1242#0" expanded="false" />
-            <element signature="e#1272#1273#0" expanded="false" />
-            <element signature="e#7256#7257#0" expanded="false" />
-            <element signature="e#7302#7303#0" expanded="false" />
-            <element signature="e#7529#7530#0" expanded="false" />
-            <element signature="e#7572#7573#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.react/react-native/0.20.1/aca865df36322fa13483c10dd4898f320b225ec0/react-native-0.20.1-sources.jar!/com/facebook/react/bridge/ReactContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3090">
@@ -3478,6 +3460,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="e#552#553#0" expanded="false" />
+            <element signature="e#579#580#0" expanded="false" />
+            <element signature="e#839#840#0" expanded="false" />
+            <element signature="e#866#867#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3548,18 +3536,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/GiraffePlayer.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lib/rinika/giraffeplayer/GiraffePlayerView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="886">
-          <caret line="685" column="12" lean-forward="true" selection-start-line="685" selection-start-column="12" selection-end-line="685" selection-end-column="12" />
+        <state relative-caret-position="-318">
+          <caret line="114" column="50" lean-forward="true" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/lib/rinika/giraffeplayer/GiraffePlayerView.java">
+    <entry file="file://$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/GiraffePlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="42" column="60" lean-forward="false" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+        <state relative-caret-position="301">
+          <caret line="641" column="0" lean-forward="true" selection-start-line="641" selection-start-column="0" selection-end-line="641" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/giraffeplayer2/src/main/java/tcking/github/com/giraffeplayer2/PlayerManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="772">
+          <caret line="221" column="0" lean-forward="true" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -131,7 +131,7 @@ public class PlayerManager {
             if (currentPlayer.getProxyPlayerListener() != null) {
                 currentPlayer.getProxyPlayerListener().onCompletion(currentPlayer);
             }
-            currentPlayer.release();
+//            currentPlayer.release();
         }
         currentPlayerFingerprint = null;
     }
