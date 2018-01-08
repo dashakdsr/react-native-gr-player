@@ -543,7 +543,7 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
             @Override
             public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
                 log("onSurfaceTextureDestroyed");
-                return false;//全屏时会发生view的移动，会触发此回调，必须为false（true表示系统负责销毁，此view将不再可用）
+                return false;
             }
 
             @Override
@@ -644,7 +644,6 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
         if (released) {
             return;
         }
-        log("doRelease");
         PlayerManager.getInstance().removePlayer(fingerprint);
         //1. quit handler thread
         internalPlaybackThread.quit();
@@ -658,14 +657,12 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
 
     private void releaseMediaPlayer() {
         if (mediaPlayer != null) {
-            log("releaseMediaPlayer");
             mediaPlayer.release();
             mediaPlayer = null;
         }
     }
 
     public void release() {
-        log("try release");
         String fingerprint = videoInfo.getFingerprint();
         PlayerManager.getInstance().removePlayer(fingerprint);
         handler.obtainMessage(MSG_CTRL_RELEASE, fingerprint).sendToTarget();
@@ -685,7 +682,6 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
     }
 
     private void doReleaseDisplayBox() {
-        log("doReleaseDisplayBox");
         ScalableTextureView currentDisplay = getCurrentDisplay();
         if (currentDisplay != null) {
             currentDisplay.setSurfaceTextureListener(null);
@@ -938,7 +934,6 @@ public class GiraffePlayer implements MediaController.MediaPlayerControl {
 
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                // 获取相对屏幕的坐标，即以屏幕左上角为原点
 //                System.out.println("MotionEvent:action:"+event.getAction()+",raw:["+event.getRawX()+","+event.getRawY()+"],xy["+event.getX()+","+event.getY()+"]");
 
                 switch (event.getAction()) {

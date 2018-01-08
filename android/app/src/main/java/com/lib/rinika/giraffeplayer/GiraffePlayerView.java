@@ -40,6 +40,7 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
 
     public static final String EVENT_PROP_DURATION = "duration";
     public static final String EVENT_PROP_CURRENT_TIME = "currentTime";
+    public static final String EVENT_PROP_PAUSED = "paused";
     public static final String EVENT_PROP_END = "endReached";
     public static final String EVENT_PROP_SEEK_TIME = "seekTime";
 
@@ -118,7 +119,9 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
 
         @Override
         public void onPause(GiraffePlayer giraffePlayer) {
-            mEventEmitter.receiveEvent(getId(), Events.EVENT_PAUSED.toString(), null);
+            WritableMap map = Arguments.createMap();
+            map.putBoolean(EVENT_PROP_PAUSED, mPaused);
+            mEventEmitter.receiveEvent(getId(), Events.EVENT_PAUSED.toString(), map);
         }
 
         @Override
@@ -150,7 +153,7 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
 
     private void setMedia(String filePath) {
         videoView.setVideoPath(filePath).setFingerprint(videoView.hashCode());
-        videoView.getPlayer().initialize();
+//        videoView.getPlayer().initialize();
         checkProgress();
     }
 
