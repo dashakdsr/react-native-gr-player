@@ -119,9 +119,9 @@ public class GiraffePlayerView extends FrameLayout implements LifecycleEventList
 
         @Override
         public void onPause(GiraffePlayer giraffePlayer) {
-            WritableMap map = Arguments.createMap();
-            map.putBoolean(EVENT_PROP_PAUSED, mPaused);
-            mEventEmitter.receiveEvent(getId(), Events.EVENT_PAUSED.toString(), map);
+//            WritableMap map = Arguments.createMap();
+//            map.putBoolean(EVENT_PROP_PAUSED, mPaused);
+            mEventEmitter.receiveEvent(getId(), Events.EVENT_PAUSED.toString(), null);
         }
 
         @Override
